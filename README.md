@@ -4,7 +4,7 @@ Bem-vindo ao **Sabor de Verão**! Este é um site dedicado a exibir o cardápio 
 
 ## 🚀 Começando
 
-1. **Acesse o site <https://guilhermemorettodeitos.github.io/Galeria-de-Imagens> ou**
+1. **Acesse o site <https://guilhermemorettodeitos.github.io/Sabor-de-Verao/> ou**
 2. **Leia o QR Code:**
  
 ![Qrcode](images/qrcode.png)
