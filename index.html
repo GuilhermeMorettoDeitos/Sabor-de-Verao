@@ -12,14 +12,15 @@
 <body>
     <header>
         <img src="images/logo1.png" alt="Logo da Sorveteria" id="logo">
-        <h1>Cardápio de Sobremesas</h1>
+        <img src="images/cab1.png" alt="cab1" id="logo1">
+        <!--<h1>Cardápio de Sobremesas</h1>-->
     </header>
 
     <nav>
         <ul>
-            <li><a href="#" onclick="showCategory('card1')">Cardápio 1</a></li>
-            <li><a href="#" onclick="showCategory('card2')">Cardápio 2</a></li>
-            <li><a href="#" onclick="showCategory('card3')">Cardápio 3</a></li>
+            <li><a href="#" id="link-card1" onclick="showCategory('card1')">Cardápio 1</a></li>
+            <li><a href="#" id="link-card2" onclick="showCategory('card2')">Cardápio 2</a></li>
+            <li><a href="#" id="link-card3" onclick="showCategory('card3')">Cardápio 3</a></li>
         </ul>
     </nav>
 
@@ -32,22 +33,26 @@
     </div>
 
     <footer>
-        <div class="social-icons">
-            <a href="https://www.instagram.com/saborr_de_verao?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="social-icon">
-                <i class="fab fa-instagram"></i>
+        <div class="social-media">
+            <a href="https://www.instagram.com/saborr_de_verao?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
+                <img src="images/insticon.png" alt="Instagram">
             </a>
-            <a href="https://www.facebook.com/sorvesabordeverao?mibextid=ZbWKwL" target="_blank" class="social-icon">
-                <i class="fab fa-facebook-f"></i>
+            <a href="https://www.facebook.com/sorvesabordeverao?mibextid=ZbWKwL" target="_blank">
+                <img src="images/facicon.png" alt="Facebook">
             </a>
         </div>
         <p>&copy; 2024 Sorveteria Sabor de Verão. Todos os direitos reservados.</p>
-        <p><a href="https://github.com/GuilhermeMorettoDeitos/Sabor-de-Verao" target="_blank">Mais informações do site</a></p>
+        <p><a href="https://github.com/GuilhermeMorettoDeitos/Sabor-de-Verao" target="_blank">Visite nosso site completo</a></p>
     </footer>
 
     <script>
         function showCategory(category) {
             const content = document.getElementById('content');
             let html = '';
+            
+            const links = document.querySelectorAll('nav ul li a');
+            links.forEach(link => link.classList.remove('selected'));
+            
             if (category === 'card1') {
                 html = `
                     <div class="gallery">
@@ -56,6 +61,7 @@
                     </div>
                     <button class="next-button" onclick="showCategory('card2')">Próximo Cardápio</button>
                 `;
+                document.getElementById('link-card1').classList.add('selected');
             } else if (category === 'card2') {
                 html = `
                     <div class="gallery">
@@ -64,6 +70,7 @@
                     </div>
                     <button class="next-button" onclick="showCategory('card3')">Próximo Cardápio</button>
                 `;
+                document.getElementById('link-card2').classList.add('selected');
             } else if (category === 'card3') {
                 html = `
                     <div class="gallery">
@@ -72,6 +79,7 @@
                     </div>
                     <button class="next-button" onclick="showCategory('card1')">Voltar ao Primeiro Cardápio</button>
                 `;
+                document.getElementById('link-card3').classList.add('selected');
             }
             content.innerHTML = html;
         }
