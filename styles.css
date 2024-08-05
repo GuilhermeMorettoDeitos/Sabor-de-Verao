@@ -2,7 +2,7 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #333333;
     text-align: center;
     min-height: 100vh;
     display: flex;
@@ -10,6 +10,7 @@ body {
 }
 
 header {
+    background: linear-gradient(to bottom, #ff4081 10%, #333333);
     background-color: #ff4081;
     color: white;
     padding: 20px 0;
@@ -19,6 +20,11 @@ header {
     width: 200px;
     display: block;
     margin: 0 auto 5px;
+    transition: color 300ms, transform 300ms;
+}
+#logo:hover {
+    transform: scale(1.15);
+    transition: color 300ms, transform 300ms;
 }
 
 #logo1 {
@@ -54,15 +60,32 @@ nav ul li a {
     padding: 10px 30px;
     display: block;
     transition: background-color 0.3s;
+    transition: color 300ms, transform 300ms;
 }
 
 nav ul li a:hover {
-    background-color: #ff4081;
+    border-bottom: 2px solid #ff4081;
+    color: #ff4081; 
+    font-weight: bold; 
+    transform: scale(1.1);
+    transition: color 0.3s;
+    transition: 300ms linear;
+}
+
+nav ul li a.selected {
+    border-bottom: 2px solid #ff4081;
+    color: #ff4081; 
+    font-weight: bold; 
+    transform: scale(1.1);
 }
 
 .container {
+    display: flex;
+    flex-direction: column;
     padding: 20px;
     flex: 1;
+    justify-content: center;
+    align-items: center;
 }
 
 .start-button {
@@ -198,18 +221,15 @@ footer .social-icon:hover {
     transform: scale(1.1);
 }
 
-nav ul li a.selected {
-    border-bottom: 2px solid #ff4081;
-    color: #ff4081; 
-    font-weight: bold; 
+.page-title {
+    font-family: 'Shantell Sans', cursive;
+    font-size: 4em;
+    color: #ffffff;
+    margin: 0;
+    padding: 10px 0;
 }
 
-
 @media (min-width: 600px) {
-    nav ul {
-        justify-content: center;
-    }
-
     .gallery {
         flex-direction: row;
         flex-wrap: wrap;
